@@ -6,6 +6,14 @@
   "publisher": "brunodantas",
   "icon": "logo.png",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunodantas/display-p3.git"
+  },
+  "homepage": "https://github.com/brunodantas/display-p3",
+  "bugs": {
+    "url": "https://github.com/brunodantas/display-p3/issues"
+  },
   "keywords": [
     "theme",
     "themes",
