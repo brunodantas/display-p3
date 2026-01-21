@@ -1,0 +1,327 @@
+{
+  "name": "Display P3 — Deep Earth",
+  "type": "dark",
+  "colors": {
+    "focusBorder": "#1a5fb4",
+    "foreground": "#d7d3cc",
+    "widget.shadow": "#00000080",
+    "selection.background": "#1a5fb433",
+    "errorForeground": "#ff5a6a",
+    "icon.foreground": "#d7d3cc",
+
+    "editor.background": "#121414",
+    "editor.foreground": "#d7d3cc",
+    "editorLineNumber.foreground": "#474342",
+    "editorLineNumber.activeForeground": "#d4b800",
+    "editorCursor.foreground": "#d4b800",
+    "editor.selectionBackground": "#1a5fb42b",
+    "editor.selectionHighlightBackground": "#d642001a",
+    "editor.lineHighlightBackground": "#ffffff06",
+    "editor.lineHighlightBorder": "#ffffff10",
+    "editor.findMatchBackground": "#d4b80040",
+    "editor.findMatchHighlightBackground": "#1a5fb426",
+    "editor.wordHighlightBackground": "#1a5fb41a",
+    "editor.wordHighlightStrongBackground": "#d642001f",
+    "editorIndentGuide.background": "#47434233",
+    "editorIndentGuide.activeBackground": "#1a5fb452",
+    "editorBracketMatch.background": "#1a5fb41a",
+    "editorBracketMatch.border": "#1a5fb4",
+
+    "editorWidget.background": "#171a1a",
+    "editorWidget.border": "#1a5fb4",
+    "editorSuggestWidget.background": "#171a1a",
+    "editorSuggestWidget.border": "#1a5fb4",
+    "editorSuggestWidget.selectedBackground": "#1a5fb41a",
+    "editorSuggestWidget.highlightForeground": "#d4b800",
+    "editorHoverWidget.background": "#171a1a",
+    "editorHoverWidget.border": "#1a5fb4",
+
+    "activityBar.background": "#0d0f0f",
+    "activityBar.foreground": "#d64200",
+    "activityBar.inactiveForeground": "#8a8380",
+    "activityBar.activeBorder": "#d4b800",
+    "activityBarBadge.background": "#1a5fb4",
+    "activityBarBadge.foreground": "#121414",
+
+    "sideBar.background": "#0f1111",
+    "sideBar.foreground": "#cfcac2",
+    "sideBar.border": "#1a5fb422",
+    "sideBarTitle.foreground": "#d4b800",
+    "sideBarSectionHeader.background": "#121414",
+    "sideBarSectionHeader.foreground": "#d4b800",
+    "sideBarSectionHeader.border": "#1a5fb426",
+
+    "tab.activeBackground": "#121414",
+    "tab.inactiveBackground": "#0f1111",
+    "tab.activeForeground": "#d7d3cc",
+    "tab.inactiveForeground": "#a8a29b",
+    "tab.activeBorder": "#d4b800",
+    "tab.border": "#00000000",
+    "tab.hoverBackground": "#171a1a44",
+    "tab.hoverBorder": "#d64200",
+    "editorGroupHeader.tabsBackground": "#0f1111",
+    "editorGroupHeader.tabsBorder": "#1a5fb422",
+
+    "statusBar.background": "#0f1111",
+    "statusBar.foreground": "#cfcac2",
+    "statusBar.border": "#1a5fb422",
+    "statusBar.noFolderBackground": "#0f1111",
+    "statusBar.noFolderForeground": "#a8a29b",
+    "statusBar.debuggingBackground": "#0f1111",
+    "statusBar.debuggingForeground": "#d4b800",
+    "statusBarItem.hoverBackground": "#1a5fb41a",
+    "statusBarItem.prominentBackground": "#d6420022",
+
+    "list.activeSelectionBackground": "#1a5fb422",
+    "list.activeSelectionForeground": "#d7d3cc",
+    "list.inactiveSelectionBackground": "#1a5fb414",
+    "list.hoverBackground": "#d4b80012",
+    "list.hoverForeground": "#d7d3cc",
+    "list.highlightForeground": "#d4b800",
+    "list.focusBackground": "#1a5fb41a",
+    "list.focusOutline": "#1a5fb4",
+
+    "button.background": "#1a5fb4",
+    "button.foreground": "#121414",
+    "button.hoverBackground": "#1a5fb4d4",
+    "button.secondaryBackground": "#d64200",
+    "button.secondaryForeground": "#121414",
+    "button.secondaryHoverBackground": "#d64200d4",
+
+    "input.background": "#171a1a",
+    "input.border": "#1a5fb4",
+    "input.foreground": "#d7d3cc",
+    "input.placeholderForeground": "#8a8380",
+    "inputOption.activeBorder": "#d4b800",
+    "inputOption.activeBackground": "#d4b80026",
+    "inputValidation.errorBorder": "#ff5a6a",
+    "inputValidation.infoBorder": "#1a5fb4",
+    "inputValidation.warningBorder": "#d4b800",
+
+    "dropdown.background": "#171a1a",
+    "dropdown.border": "#1a5fb4",
+    "dropdown.foreground": "#d7d3cc",
+
+    "panel.background": "#0f1111",
+    "panel.border": "#1a5fb422",
+    "panelTitle.activeBorder": "#d4b800",
+    "panelTitle.activeForeground": "#d7d3cc",
+    "panelTitle.inactiveForeground": "#a8a29b",
+
+    "terminal.background": "#0f1111",
+    "terminal.foreground": "#d7d3cc",
+    "terminal.ansiBlack": "#171a1a",
+    "terminal.ansiRed": "#d64200",
+    "terminal.ansiGreen": "#008f5d",
+    "terminal.ansiYellow": "#d4b800",
+    "terminal.ansiBlue": "#1a5fb4",
+    "terminal.ansiMagenta": "#7a4fb8",
+    "terminal.ansiCyan": "#008f5d",
+    "terminal.ansiWhite": "#d7d3cc",
+    "terminal.ansiBrightBlack": "#474342",
+    "terminal.ansiBrightRed": "#ff7a84",
+    "terminal.ansiBrightGreen": "#33c28f",
+    "terminal.ansiBrightYellow": "#e6d45e",
+    "terminal.ansiBrightBlue": "#5f93d6",
+    "terminal.ansiBrightMagenta": "#a488da",
+    "terminal.ansiBrightCyan": "#55d5a6",
+    "terminal.ansiBrightWhite": "#ffffff",
+    "terminal.selectionBackground": "#1a5fb433",
+    "terminalCursor.foreground": "#d4b800",
+
+    "notificationCenter.border": "#1a5fb4",
+    "notificationToast.border": "#1a5fb4",
+    "notifications.background": "#171a1a",
+    "notifications.border": "#1a5fb4",
+    "notifications.foreground": "#d7d3cc",
+    "notificationLink.foreground": "#1a5fb4",
+
+    "scrollbarSlider.background": "#1a5fb426",
+    "scrollbarSlider.hoverBackground": "#1a5fb43d",
+    "scrollbarSlider.activeBackground": "#1a5fb452",
+
+    "badge.background": "#1a5fb4",
+    "badge.foreground": "#121414",
+
+    "progressBar.background": "#d4b800",
+
+    "peekView.border": "#1a5fb4",
+    "peekViewEditor.background": "#121414",
+    "peekViewResult.background": "#0f1111",
+    "peekViewTitle.background": "#171a1a",
+    "peekViewResult.selectionBackground": "#1a5fb426",
+
+    "diffEditor.insertedTextBackground": "#008f5d1f",
+    "diffEditor.removedTextBackground": "#d642001f",
+    "diffEditor.insertedLineBackground": "#008f5d0f",
+    "diffEditor.removedLineBackground": "#d642000f",
+    "diffEditor.border": "#1a5fb426",
+
+    "gitDecoration.addedResourceForeground": "#008f5d",
+    "gitDecoration.modifiedResourceForeground": "#1a5fb4",
+    "gitDecoration.deletedResourceForeground": "#d64200",
+    "gitDecoration.untrackedResourceForeground": "#d4b800",
+    "gitDecoration.ignoredResourceForeground": "#8a8380",
+    "gitDecoration.conflictingResourceForeground": "#d4b800",
+
+    "minimap.findMatchHighlight": "#d4b8005c",
+    "minimap.selectionHighlight": "#1a5fb433",
+    "minimap.errorHighlight": "#d64200a3",
+    "minimap.warningHighlight": "#d4b800a3",
+    "minimapGutter.addedBackground": "#008f5d",
+    "minimapGutter.modifiedBackground": "#1a5fb4",
+    "minimapGutter.deletedBackground": "#d64200",
+
+    "breadcrumb.foreground": "#a8a29b",
+    "breadcrumb.focusForeground": "#d7d3cc",
+    "breadcrumb.activeSelectionForeground": "#d4b800",
+
+    "titleBar.activeBackground": "#0f1111",
+    "titleBar.activeForeground": "#d7d3cc",
+    "titleBar.inactiveBackground": "#0f1111",
+    "titleBar.inactiveForeground": "#8a8380",
+    "titleBar.border": "#1a5fb422",
+
+    "menu.background": "#171a1a",
+    "menu.foreground": "#d7d3cc",
+    "menu.selectionBackground": "#1a5fb426",
+    "menu.selectionForeground": "#d7d3cc",
+    "menu.separatorBackground": "#1a5fb433",
+    "menu.border": "#1a5fb4"
+  },
+  "tokenColors": [
+    {
+      "name": "Deep Earth: Comments",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": { "foreground": "#7a7370", "fontStyle": "italic" }
+    },
+    {
+      "name": "Deep Earth: Keywords (P3 Terracotta)",
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier",
+        "keyword.operator.new",
+        "keyword.control",
+        "keyword.operator.expression",
+        "keyword.operator.logical",
+        "entity.name.function.preprocessor",
+        "meta.preprocessor",
+        "keyword.control.directive",
+        "support.other.directive"
+      ],
+      "settings": { "foreground": "#d64200" }
+    },
+    {
+      "name": "Deep Earth: Types / Classes (P3 Raw Sulfur)",
+      "scope": [
+        "support.type",
+        "support.class",
+        "entity.name.type",
+        "entity.name.class",
+        "entity.name.interface",
+        "entity.name.enum",
+        "entity.name.struct",
+        "entity.name.trait",
+        "entity.name.impl"
+      ],
+      "settings": { "foreground": "#d4b800" }
+    },
+    {
+      "name": "Deep Earth: Functions / Methods (P3 Lapis Lazuli)",
+      "scope": [
+        "entity.name.function",
+        "support.function",
+        "entity.name.method",
+        "support.method",
+        "variable.function"
+      ],
+      "settings": { "foreground": "#1a5fb4" }
+    },
+    {
+      "name": "Deep Earth: Strings (P3 Malachite)",
+      "scope": [
+        "string",
+        "punctuation.definition.string",
+        "string.quoted",
+        "string.template",
+        "string.regexp"
+      ],
+      "settings": { "foreground": "#008f5d" }
+    },
+    {
+      "name": "Deep Earth: Constants / Numbers",
+      "scope": [
+        "constant.numeric",
+        "constant.language.boolean",
+        "constant.language.null",
+        "constant.language",
+        "constant.character.escape",
+        "constant.other",
+        "support.constant"
+      ],
+      "settings": { "foreground": "#d4b800" }
+    },
+    {
+      "name": "Deep Earth: Variables",
+      "scope": ["variable", "variable.other", "variable.other.readwrite"],
+      "settings": { "foreground": "#d7d3cc" }
+    },
+    {
+      "name": "Deep Earth: Parameters",
+      "scope": ["variable.parameter"],
+      "settings": { "foreground": "#d64200" }
+    },
+    {
+      "name": "Deep Earth: Properties / Fields",
+      "scope": [
+        "variable.other.property",
+        "variable.other.member",
+        "support.variable.property",
+        "meta.object-literal.key",
+        "meta.object.member"
+      ],
+      "settings": { "foreground": "#1a5fb4" }
+    },
+    {
+      "name": "Deep Earth: Operators",
+      "scope": [
+        "keyword.operator",
+        "punctuation.separator",
+        "punctuation.accessor",
+        "punctuation.terminator",
+        "punctuation.section",
+        "punctuation.definition.parameters",
+        "punctuation.definition.arguments",
+        "punctuation.definition.typeparameters"
+      ],
+      "settings": { "foreground": "#a8a29b" }
+    },
+    {
+      "name": "Deep Earth: Invalid",
+      "scope": ["invalid", "invalid.illegal"],
+      "settings": { "foreground": "#ff5a6a", "fontStyle": "underline" }
+    }
+  ],
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "namespace": "#d4b800",
+    "type": "#d4b800",
+    "typeParameter": "#d64200",
+    "class": "#d4b800",
+    "interface": "#d4b800",
+    "enum": "#d4b800",
+    "enumMember": "#d4b800",
+    "function": "#1a5fb4",
+    "method": "#1a5fb4",
+    "macro": "#d64200",
+    "parameter": "#d64200",
+    "property": "#1a5fb4",
+    "variable": "#d7d3cc",
+    "decorator": "#d64200",
+    "comment": {
+      "foreground": "#7a7370",
+      "italic": true
+    }
+  }
+}

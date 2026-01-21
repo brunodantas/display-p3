@@ -1,0 +1,120 @@
+{
+  "name": "display-p3",
+  "displayName": "Display P3",
+  "description": "Display P3-friendly theme with multiple flavors.",
+  "version": "0.0.1",
+  "publisher": "brunodantas",
+  "icon": "logo.png",
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "themes",
+    "color theme",
+    "syntax highlighting",
+    "dark theme",
+    "light theme",
+    "display p3",
+    "p3",
+    "wide gamut",
+    "wide color",
+    "color accurate",
+    "high contrast",
+    "mac",
+    "macos",
+    "apple",
+    "retina",
+    "xdr",
+    "studio display",
+    "pro display xdr"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Display P3 - Neon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Neon P3.json"
+      },
+      {
+        "label": "Display P3 - Deep Forest",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Deep Forest P3.json"
+      },
+      {
+        "label": "Display P3 - Deep Earth",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Deep Earth P3.json"
+      },
+      {
+        "label": "Display P3 - Midnight Press",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Midnight Press P3.json"
+      },
+      {
+        "label": "Display P3 - Bioluminescent",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Bioluminescent P3.json"
+      },
+      {
+        "label": "Display P3 - Solarized",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Solarized P3.json"
+      },
+      {
+        "label": "Display P3 - Cyber-Oasis",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Cyber-Oasis P3.json"
+      },
+      {
+        "label": "Display P3 - Solar Flare",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Solar Flare P3.json"
+      },
+      {
+        "label": "Display P3 - Hyper-Vapor",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Hyper-Vapor P3.json"
+      },
+      {
+        "label": "Display P3 - Monokai",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Monokai P3.json"
+      },
+      {
+        "label": "Display P3 - Dracula",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Dracula P3.json"
+      },
+      {
+        "label": "Display P3 - Synthwave",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Synthwave P3.json"
+      },
+      {
+        "label": "Display P3 - Night Owl",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Night Owl P3.json"
+      },
+      {
+        "label": "Display P3 - Tokyo Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Tokyo Night P3.json"
+      },
+      {
+        "label": "Display P3 - One Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/One Dark P3.json"
+      },
+      {
+        "label": "Display P3 - Artisan Paper",
+        "uiTheme": "vs",
+        "path": "./themes/Artisan Paper P3.json"
+      }
+    ]
+  }
+}
