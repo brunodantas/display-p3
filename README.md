@@ -24,7 +24,7 @@ Install via https://marketplace.visualstudio.com/items?itemName=brunodantas.disp
 
 <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/bb6e9e38-fa20-4fc9-b68d-357a44579858" />
 
-###Display P3 - Deep Forest
+### Display P3 - Deep Forest
 
 <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/40d37b65-3dee-4ab6-b427-8326039fab65" />
 
