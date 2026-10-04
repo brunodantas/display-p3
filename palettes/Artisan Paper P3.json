@@ -119,7 +119,11 @@
     "property": "indigo",
     "operator": "muted",
     "decorator": "ochre",
-    "invalid": "red"
+    "invalid": "red",
+    "namespace": "indigo",
+    "typeParameter": "ochre",
+    "interface": "indigo",
+    "macro": "ochre"
   },
   "overrides": {
     "input.background": "paper",

@@ -121,7 +121,11 @@
     "parameter": "peach",
     "property": "yellow",
     "operator": "muted",
-    "invalid": "red"
+    "invalid": "red",
+    "namespace": "purple",
+    "typeParameter": "peach",
+    "interface": "purple",
+    "macro": "pink"
   },
   "overrides": {
     "selection.background": "currentLine",

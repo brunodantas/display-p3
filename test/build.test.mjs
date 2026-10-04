@@ -45,12 +45,12 @@ const buildOne = (p, committed) => {
   return { ...result, theme: result.flavors[0] && JSON.parse(result.flavors[0].json) };
 };
 
-test('the real palettes compile to the committed theme files byte for byte', () => {
+test('every committed flavor compiles from its palette byte for byte', () => {
   const { flavors, violations } = build(realTemplate, path.join(root, 'palettes'));
   assert.deepEqual(violations, []);
   assert.deepEqual(
     flavors.map((f) => f.file),
-    fs.readdirSync(path.join(root, 'palettes')).filter((f) => f.endsWith('.json')).sort(),
+    fs.readdirSync(path.join(root, 'themes')).filter((f) => f.endsWith('.json')).sort(),
   );
   for (const { file, json } of flavors) {
     assert.equal(json, fs.readFileSync(path.join(root, 'themes', file), 'utf8'), file);

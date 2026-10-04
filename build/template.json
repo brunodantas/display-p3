@@ -230,6 +230,22 @@
       ],
       "foreground": "keyword"
     },
+    "keywordsWithDirectives": {
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier",
+        "keyword.operator.new",
+        "keyword.control",
+        "keyword.operator.expression",
+        "keyword.operator.logical",
+        "entity.name.function.preprocessor",
+        "meta.preprocessor",
+        "keyword.control.directive",
+        "support.other.directive"
+      ],
+      "foreground": "keyword"
+    },
     "types": {
       "scope": [
         "support.type",
@@ -285,6 +301,20 @@
       ],
       "foreground": "constant"
     },
+    "numbers": {
+      "scope": ["constant.numeric", "constant.language.boolean", "constant.language.null"],
+      "foreground": "number"
+    },
+    "namedConstants": {
+      "scope": [
+        "constant.language",
+        "constant.character.escape",
+        "constant.other",
+        "constant.other.color",
+        "support.constant"
+      ],
+      "foreground": "constant"
+    },
     "variables": {
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
       "foreground": "variable"
@@ -323,16 +353,16 @@
     }
   },
   "semanticTokenColors": {
-    "namespace": "type",
+    "namespace": "namespace",
     "type": "type",
-    "typeParameter": "parameter",
+    "typeParameter": "typeParameter",
     "class": "type",
-    "interface": "type",
+    "interface": "interface",
     "enum": "type",
     "enumMember": "constant",
     "function": "function",
     "method": "function",
-    "macro": "keyword",
+    "macro": "macro",
     "parameter": "parameter",
     "property": "property",
     "variable": "variable",
