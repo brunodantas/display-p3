@@ -368,5 +368,9 @@
     "variable": "variable",
     "decorator": "decorator",
     "comment": { "foreground": "comment", "italic": true }
+  },
+  "tint": {
+    "text": { "lightness": 0.9, "chroma": 0.025 },
+    "brightWhite": { "lightness": 0.975, "chroma": 0.01 }
   }
 }

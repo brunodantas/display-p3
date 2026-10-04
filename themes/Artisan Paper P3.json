@@ -125,7 +125,7 @@
     "terminal.ansiBrightBlue": "#5a35ff",
     "terminal.ansiBrightMagenta": "#6b4cff",
     "terminal.ansiBrightCyan": "#00a57b",
-    "terminal.ansiBrightWhite": "#ffffff",
+    "terminal.ansiBrightWhite": "#fffbf4",
     "terminal.selectionBackground": "#3a00cc1a",
     "terminalCursor.foreground": "#3a00cc",
 

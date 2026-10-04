@@ -45,6 +45,7 @@
     "build": "node build/cli.mjs",
     "check": "node build/cli.mjs --check",
     "test": "node --test \"test/**/*.test.mjs\"",
+    "preview": "node build/preview.mjs",
     "vscode:prepublish": "npm run check"
   },
   "contributes": {

@@ -17,7 +17,7 @@ A flavor's swatches and the roles they fill.
 _Avoid_: color scheme
 
 **Swatch**:
-One named OKLCH color in a palette. Roles and overrides refer to it by name, with an optional alpha byte, as in `pink/1f`.
+One named OKLCH color in a palette, either given as numbers or taken from the flavor's tint. Roles and overrides refer to it by name, with an optional alpha byte, as in `pink/1f`.
 _Avoid_: base color
 
 **Role**:
@@ -41,11 +41,15 @@ An accent that marks state: the cursor, focus, errors, warnings and badges.
 _Avoid_: status color
 
 **Neutral**:
-A light color with no visible hue. This project bans them.
+A color with no visible hue, light or dark.
 _Avoid_: white, grey
 
+**Light neutral**:
+A neutral light enough to glare, measured as OKLCH chroma below 0.008 with lightness above 0.6. This project bans them, except for the flavor's own background; dark neutrals are allowed.
+_Avoid_: white
+
 **Tint**:
-The small chroma a light value takes from its background's hue.
+The small chroma a light value takes from its background's hue. Each tint strength is a lightness and chroma, one for main text and one for bright white. The template sets them, and a flavor may change either number, or the hue when its background has no visible hue.
 _Avoid_: cast
 
 **Gamut edge**:

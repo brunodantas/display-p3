@@ -1,9 +1,10 @@
 {
   "name": "Display P3 — Artisan Paper",
   "type": "light",
+  "tint": { "brightWhite": { "lightness": 0.989 } },
   "swatches": {
     "black": [0, 0, 0],
-    "white": [1, 0, 0],
+    "brightWhite": { "tint": "brightWhite" },
     "paper": [0.986, 0.007, 80.7],
     "cream": [0.97, 0.015, 77.1],
     "linen": [0.955, 0.018, 78.2],
@@ -92,7 +93,7 @@
     "ansiBrightBlue": "brightBlue",
     "ansiBrightMagenta": "brightMagenta",
     "ansiBrightCyan": "brightCyan",
-    "ansiBrightWhite": "white",
+    "ansiBrightWhite": "brightWhite",
     "link": "indigo",
     "scrollbarHover": "black/1f",
     "scrollbarActive": "black/2b",

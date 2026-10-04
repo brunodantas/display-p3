@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { formatHex } from 'culori';
 import { formatTheme } from './format.mjs';
+import { lint } from './lint.mjs';
 
 /**
  * Compiles every palette in paletteDir through the template into theme JSON text.
@@ -18,6 +19,7 @@ export function build(template, paletteDir, committedDir) {
     };
     const palette = JSON.parse(fs.readFileSync(path.join(paletteDir, file), 'utf8'));
     const json = compile(template, palette, report);
+    lint(JSON.parse(json), report);
     flavors.push({ flavor, file, json });
     if (committedDir) compareWithCommitted(json, path.join(committedDir, file), report);
   }
@@ -25,14 +27,30 @@ export function build(template, paletteDir, committedDir) {
 }
 
 function compile(template, palette, report) {
-  // Takes a swatch name with an optional alpha byte, like "pink/1f".
+  const tint = tintFor(template, palette, report);
+  // A light neutral like muted text keeps its own lightness, so a tint swatch may set one.
+  const swatchLch = (value, key) => {
+    if (Array.isArray(value)) return value;
+    const strength = tint.strengths[value.tint];
+    if (!strength) {
+      report(key, `unknown tint strength "${value.tint}"`);
+      return null;
+    }
+    if (tint.hue === undefined) {
+      report(key, 'the background has no hue to tint with, so the palette must set tint.hue');
+      return null;
+    }
+    return [value.lightness ?? strength.lightness, strength.chroma, tint.hue];
+  };
   const color = (ref, key) => {
-    const [, swatchName, alpha = ''] = /^(\w+)(?:\/([0-9a-f]{2}))?$/.exec(ref) ?? [];
+    const { swatchName, alpha } = parseColorRef(ref);
     if (!Object.hasOwn(palette.swatches, swatchName ?? '')) {
       report(key, `cannot resolve color "${ref}"`);
       return null;
     }
-    const [l, c, h] = palette.swatches[swatchName];
+    const resolved = swatchLch(palette.swatches[swatchName], key);
+    if (!resolved) return null;
+    const [l, c, h] = resolved;
     return formatHex({ mode: 'oklch', l, c, h }) + alpha;
   };
   const role = (name, key) => {
@@ -79,6 +97,26 @@ function compile(template, palette, report) {
   );
 
   return formatTheme({ name: palette.name, type: palette.type, colorGroups, tokenColors, semanticTokenColors });
+}
+
+// Takes a swatch name with an optional alpha byte, like "pink/1f".
+function parseColorRef(ref) {
+  const [, swatchName, alpha = ''] = /^(\w+)(?:\/([0-9a-f]{2}))?$/.exec(ref) ?? [];
+  return { swatchName, alpha };
+}
+
+// Flavors stay consistent by changing only the tint numbers they name; a grey background has no hue to follow.
+function tintFor(template, palette, report) {
+  const { hue: flavorHue, ...flavorStrengths } = palette.tint ?? {};
+  for (const name of Object.keys(flavorStrengths)) {
+    if (!Object.hasOwn(template.tint, name)) report('tint', `tint strength the template does not have: "${name}"`);
+  }
+  const strengths = Object.fromEntries(
+    Object.entries(template.tint).map(([name, strength]) => [name, { ...strength, ...flavorStrengths[name] }]),
+  );
+  const background = palette.swatches[parseColorRef(palette.roles.background ?? '').swatchName];
+  const backgroundHue = Array.isArray(background) && background[1] > 0 ? background[2] : undefined;
+  return { strengths, hue: flavorHue ?? backgroundHue };
 }
 
 const settings = (foreground, fontStyle) => ({ foreground, ...(fontStyle && { fontStyle }) });

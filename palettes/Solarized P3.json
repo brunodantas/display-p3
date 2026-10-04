@@ -3,7 +3,7 @@
   "type": "dark",
   "swatches": {
     "black": [0, 0, 0],
-    "white": [1, 0, 0],
+    "brightWhite": { "tint": "brightWhite" },
     "chrome": [0.188, 0.005, 67.5],
     "background": [0.211, 0.005, 67.6],
     "widget": [0.242, 0.007, 67.5],
@@ -98,7 +98,7 @@
     "ansiBrightBlue": "brightSky",
     "ansiBrightMagenta": "lightViolet",
     "ansiBrightCyan": "brightTeal",
-    "ansiBrightWhite": "white",
+    "ansiBrightWhite": "brightWhite",
     "link": "sky",
     "scrollbarHover": "lightCoral/3d",
     "scrollbarActive": "lightCoral/52",

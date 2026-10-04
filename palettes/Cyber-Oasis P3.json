@@ -3,7 +3,7 @@
   "type": "dark",
   "swatches": {
     "black": [0, 0, 0],
-    "white": [1, 0, 0],
+    "brightWhite": { "tint": "brightWhite" },
     "chrome": [0.129, 0.019, 209],
     "background": [0.143, 0.019, 208.3],
     "widget": [0.171, 0.023, 217],
@@ -97,7 +97,7 @@
     "ansiBrightBlue": "brightBlue",
     "ansiBrightMagenta": "brightPurple",
     "ansiBrightCyan": "brightCyan",
-    "ansiBrightWhite": "white",
+    "ansiBrightWhite": "brightWhite",
     "link": "blue",
     "scrollbarHover": "green/3d",
     "scrollbarActive": "green/52",
