@@ -1,0 +1,342 @@
+{
+  "colors": [
+    {
+      "focusBorder": "focus",
+      "foreground": "text",
+      "widget.shadow": "shadow",
+      "selection.background": "selection",
+      "errorForeground": "error",
+      "icon.foreground": "text"
+    },
+    {
+      "editor.background": "background",
+      "editor.foreground": "text",
+      "editorLineNumber.foreground": "lineNumber",
+      "editorLineNumber.activeForeground": "lineNumberActive",
+      "editorCursor.foreground": "cursor",
+      "editor.selectionBackground": "editorSelection",
+      "editor.selectionHighlightBackground": "selectionHighlight",
+      "editor.lineHighlightBackground": "lineHighlight",
+      "editor.lineHighlightBorder": "lineHighlightBorder",
+      "editor.findMatchBackground": "findMatch",
+      "editor.findMatchHighlightBackground": "findMatchHighlight",
+      "editor.wordHighlightBackground": "wordHighlight",
+      "editor.wordHighlightStrongBackground": "wordHighlightStrong",
+      "editorIndentGuide.background": "indentGuide",
+      "editorIndentGuide.activeBackground": "indentGuideActive",
+      "editorBracketMatch.background": "bracketMatch",
+      "editorBracketMatch.border": "bracketMatchBorder"
+    },
+    {
+      "editorWidget.background": "widget",
+      "editorWidget.border": "border",
+      "editorSuggestWidget.background": "widget",
+      "editorSuggestWidget.border": "border",
+      "editorSuggestWidget.selectedBackground": "itemHover",
+      "editorSuggestWidget.highlightForeground": "suggestHighlight",
+      "editorHoverWidget.background": "widget",
+      "editorHoverWidget.border": "border"
+    },
+    {
+      "activityBar.background": "chrome",
+      "activityBar.foreground": "activityIcon",
+      "activityBar.inactiveForeground": "textFaint",
+      "activityBar.activeBorder": "activeBorder",
+      "activityBarBadge.background": "badge",
+      "activityBarBadge.foreground": "background"
+    },
+    {
+      "sideBar.background": "chrome",
+      "sideBar.foreground": "chromeText",
+      "sideBar.border": "divider",
+      "sideBarTitle.foreground": "heading",
+      "sideBarSectionHeader.background": "background",
+      "sideBarSectionHeader.foreground": "heading",
+      "sideBarSectionHeader.border": "dividerFaint"
+    },
+    {
+      "tab.activeBackground": "background",
+      "tab.inactiveBackground": "chrome",
+      "tab.activeForeground": "text",
+      "tab.inactiveForeground": "textMuted",
+      "tab.activeBorder": "activeBorder",
+      "tab.border": "tabBorder",
+      "tab.hoverBackground": "tabHover",
+      "tab.hoverBorder": "tabHoverBorder",
+      "editorGroupHeader.tabsBackground": "chrome",
+      "editorGroupHeader.tabsBorder": "divider"
+    },
+    {
+      "statusBar.background": "chrome",
+      "statusBar.foreground": "chromeText",
+      "statusBar.border": "divider",
+      "statusBar.noFolderBackground": "chrome",
+      "statusBar.noFolderForeground": "textMuted",
+      "statusBar.debuggingBackground": "chrome",
+      "statusBar.debuggingForeground": "debugging",
+      "statusBarItem.hoverBackground": "itemHover",
+      "statusBarItem.prominentBackground": "prominent"
+    },
+    {
+      "list.activeSelectionBackground": "listSelection",
+      "list.activeSelectionForeground": "text",
+      "list.inactiveSelectionBackground": "listInactiveSelection",
+      "list.hoverBackground": "listHover",
+      "list.hoverForeground": "text",
+      "list.highlightForeground": "listHighlight",
+      "list.focusBackground": "listFocus",
+      "list.focusOutline": "focus"
+    },
+    {
+      "button.background": "button",
+      "button.foreground": "background",
+      "button.hoverBackground": "buttonHover",
+      "button.secondaryBackground": "buttonSecondary",
+      "button.secondaryForeground": "background",
+      "button.secondaryHoverBackground": "buttonSecondaryHover"
+    },
+    {
+      "input.background": "widget",
+      "input.border": "border",
+      "input.foreground": "text",
+      "input.placeholderForeground": "textFaint",
+      "inputOption.activeBorder": "inputOption",
+      "inputOption.activeBackground": "inputOptionBackground",
+      "inputValidation.errorBorder": "error",
+      "inputValidation.infoBorder": "info",
+      "inputValidation.warningBorder": "warning"
+    },
+    {
+      "dropdown.background": "widget",
+      "dropdown.border": "border",
+      "dropdown.foreground": "text"
+    },
+    {
+      "panel.background": "chrome",
+      "panel.border": "divider",
+      "panelTitle.activeBorder": "panelActiveBorder",
+      "panelTitle.activeForeground": "text",
+      "panelTitle.inactiveForeground": "textMuted"
+    },
+    {
+      "terminal.background": "chrome",
+      "terminal.foreground": "text",
+      "terminal.ansiBlack": "ansiBlack",
+      "terminal.ansiRed": "error",
+      "terminal.ansiGreen": "added",
+      "terminal.ansiYellow": "ansiYellow",
+      "terminal.ansiBlue": "modified",
+      "terminal.ansiMagenta": "ansiMagenta",
+      "terminal.ansiCyan": "ansiCyan",
+      "terminal.ansiWhite": "text",
+      "terminal.ansiBrightBlack": "lineNumber",
+      "terminal.ansiBrightRed": "ansiBrightRed",
+      "terminal.ansiBrightGreen": "ansiBrightGreen",
+      "terminal.ansiBrightYellow": "ansiBrightYellow",
+      "terminal.ansiBrightBlue": "ansiBrightBlue",
+      "terminal.ansiBrightMagenta": "ansiBrightMagenta",
+      "terminal.ansiBrightCyan": "ansiBrightCyan",
+      "terminal.ansiBrightWhite": "ansiBrightWhite",
+      "terminal.selectionBackground": "selection",
+      "terminalCursor.foreground": "cursor"
+    },
+    {
+      "notificationCenter.border": "border",
+      "notificationToast.border": "border",
+      "notifications.background": "widget",
+      "notifications.border": "border",
+      "notifications.foreground": "text",
+      "notificationLink.foreground": "link"
+    },
+    {
+      "scrollbarSlider.background": "dividerFaint",
+      "scrollbarSlider.hoverBackground": "scrollbarHover",
+      "scrollbarSlider.activeBackground": "scrollbarActive"
+    },
+    {
+      "badge.background": "badge",
+      "badge.foreground": "background"
+    },
+    {
+      "progressBar.background": "progress"
+    },
+    {
+      "peekView.border": "border",
+      "peekViewEditor.background": "background",
+      "peekViewResult.background": "chrome",
+      "peekViewTitle.background": "widget",
+      "peekViewResult.selectionBackground": "resultSelection"
+    },
+    {
+      "diffEditor.insertedTextBackground": "diffInserted",
+      "diffEditor.removedTextBackground": "diffRemoved",
+      "diffEditor.insertedLineBackground": "diffInsertedLine",
+      "diffEditor.removedLineBackground": "diffRemovedLine",
+      "diffEditor.border": "dividerFaint"
+    },
+    {
+      "gitDecoration.addedResourceForeground": "added",
+      "gitDecoration.modifiedResourceForeground": "modified",
+      "gitDecoration.deletedResourceForeground": "error",
+      "gitDecoration.untrackedResourceForeground": "untracked",
+      "gitDecoration.ignoredResourceForeground": "textFaint",
+      "gitDecoration.conflictingResourceForeground": "conflict"
+    },
+    {
+      "minimap.findMatchHighlight": "minimapFind",
+      "minimap.selectionHighlight": "selection",
+      "minimap.errorHighlight": "minimapError",
+      "minimap.warningHighlight": "minimapWarning",
+      "minimapGutter.addedBackground": "added",
+      "minimapGutter.modifiedBackground": "modified",
+      "minimapGutter.deletedBackground": "error"
+    },
+    {
+      "breadcrumb.foreground": "textMuted",
+      "breadcrumb.focusForeground": "text",
+      "breadcrumb.activeSelectionForeground": "breadcrumbActive"
+    },
+    {
+      "titleBar.activeBackground": "chrome",
+      "titleBar.activeForeground": "text",
+      "titleBar.inactiveBackground": "chrome",
+      "titleBar.inactiveForeground": "textFaint",
+      "titleBar.border": "divider"
+    },
+    {
+      "menu.background": "widget",
+      "menu.foreground": "text",
+      "menu.selectionBackground": "resultSelection",
+      "menu.selectionForeground": "text",
+      "menu.separatorBackground": "menuSeparator",
+      "menu.border": "border"
+    }
+  ],
+  "syntax": {
+    "comments": {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "foreground": "comment",
+      "fontStyle": "italic"
+    },
+    "keywords": {
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier",
+        "keyword.operator.new",
+        "keyword.control",
+        "keyword.operator.expression",
+        "keyword.operator.logical"
+      ],
+      "foreground": "keyword"
+    },
+    "types": {
+      "scope": [
+        "support.type",
+        "support.class",
+        "entity.name.type",
+        "entity.name.class",
+        "entity.name.interface",
+        "entity.name.enum",
+        "entity.name.struct",
+        "entity.name.trait",
+        "entity.name.impl"
+      ],
+      "foreground": "type"
+    },
+    "functions": {
+      "scope": [
+        "entity.name.function",
+        "support.function",
+        "entity.name.method",
+        "support.method",
+        "variable.function"
+      ],
+      "foreground": "function"
+    },
+    "strings": {
+      "scope": [
+        "string",
+        "punctuation.definition.string",
+        "string.quoted",
+        "string.template",
+        "string.regexp"
+      ],
+      "foreground": "string"
+    },
+    "decorators": {
+      "scope": [
+        "meta.annotation",
+        "punctuation.definition.annotation",
+        "entity.name.function.decorator",
+        "meta.decorator"
+      ],
+      "foreground": "decorator"
+    },
+    "constants": {
+      "scope": [
+        "constant.numeric",
+        "constant.language.boolean",
+        "constant.language.null",
+        "constant.language",
+        "constant.character.escape",
+        "constant.other",
+        "support.constant"
+      ],
+      "foreground": "constant"
+    },
+    "variables": {
+      "scope": ["variable", "variable.other", "variable.other.readwrite"],
+      "foreground": "variable"
+    },
+    "parameters": {
+      "scope": ["variable.parameter"],
+      "foreground": "parameter"
+    },
+    "properties": {
+      "scope": [
+        "variable.other.property",
+        "variable.other.member",
+        "support.variable.property",
+        "meta.object-literal.key",
+        "meta.object.member"
+      ],
+      "foreground": "property"
+    },
+    "operators": {
+      "scope": [
+        "keyword.operator",
+        "punctuation.separator",
+        "punctuation.accessor",
+        "punctuation.terminator",
+        "punctuation.section",
+        "punctuation.definition.parameters",
+        "punctuation.definition.arguments",
+        "punctuation.definition.typeparameters"
+      ],
+      "foreground": "operator"
+    },
+    "invalid": {
+      "scope": ["invalid", "invalid.illegal"],
+      "foreground": "invalid",
+      "fontStyle": "underline"
+    }
+  },
+  "semanticTokenColors": {
+    "namespace": "type",
+    "type": "type",
+    "typeParameter": "parameter",
+    "class": "type",
+    "interface": "type",
+    "enum": "type",
+    "enumMember": "constant",
+    "function": "function",
+    "method": "function",
+    "macro": "keyword",
+    "parameter": "parameter",
+    "property": "property",
+    "variable": "variable",
+    "decorator": "decorator",
+    "comment": { "foreground": "comment", "italic": true }
+  }
+}

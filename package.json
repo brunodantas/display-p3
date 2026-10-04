@@ -41,6 +41,12 @@
   "categories": [
     "Themes"
   ],
+  "scripts": {
+    "build": "node build/cli.mjs",
+    "check": "node build/cli.mjs --check",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "vscode:prepublish": "npm run check"
+  },
   "contributes": {
     "themes": [
       {
@@ -124,5 +130,8 @@
         "path": "./themes/Artisan Paper P3.json"
       }
     ]
+  },
+  "devDependencies": {
+    "culori": "^4.0.2"
   }
 }
