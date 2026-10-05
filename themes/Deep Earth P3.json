@@ -10,7 +10,7 @@
     "icon.foreground": "#d7d3cc",
 
     "editor.background": "#121414",
-    "editor.foreground": "#d7d3cc",
+    "editor.foreground": "#ddb875",
     "editorLineNumber.foreground": "#474342",
     "editorLineNumber.activeForeground": "#d4b800",
     "editorCursor.foreground": "#d4b800",
@@ -265,7 +265,7 @@
     {
       "name": "Deep Earth: Variables",
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
-      "settings": { "foreground": "#d7d3cc" }
+      "settings": { "foreground": "#ddb875" }
     },
     {
       "name": "Deep Earth: Parameters",
@@ -317,7 +317,7 @@
     "macro": "#df4a12",
     "parameter": "#df4a12",
     "property": "#3b7ed6",
-    "variable": "#d7d3cc",
+    "variable": "#ddb875",
     "decorator": "#df4a12",
     "comment": {
       "foreground": "#7a7370",

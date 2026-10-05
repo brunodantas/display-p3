@@ -10,7 +10,7 @@
     },
     {
       "editor.background": "background",
-      "editor.foreground": "text",
+      "editor.foreground": "code",
       "editorLineNumber.foreground": "lineNumber",
       "editorLineNumber.activeForeground": "lineNumberActive",
       "editorCursor.foreground": "cursor",
@@ -371,6 +371,7 @@
   },
   "tint": {
     "text": { "lightness": 0.9, "chroma": 0.025 },
+    "code": { "lightness": 0.8, "chroma": 0.095 },
     "brightWhite": { "lightness": 0.975, "chroma": 0.01 }
   }
 }

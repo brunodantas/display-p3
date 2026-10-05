@@ -10,7 +10,7 @@
     "icon.foreground": "#f4e9df",
 
     "editor.background": "#120f0d",
-    "editor.foreground": "#f4e9df",
+    "editor.foreground": "#edae82",
     "editorLineNumber.foreground": "#3f332d",
     "editorLineNumber.activeForeground": "#ffcc00",
     "editorCursor.foreground": "#ffcc00",
@@ -261,12 +261,12 @@
     {
       "name": "Solar Flare: Variables",
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
-      "settings": { "foreground": "#f4e9df" }
+      "settings": { "foreground": "#edae82" }
     },
     {
       "name": "Solar Flare: Parameters",
       "scope": ["variable.parameter"],
-      "settings": { "foreground": "#ffe6c7" }
+      "settings": { "foreground": "#ffe1ba" }
     },
     {
       "name": "Solar Flare: Properties / Fields",
@@ -313,17 +313,17 @@
   "semanticTokenColors": {
     "namespace": "#7dd7ff",
     "type": "#7dd7ff",
-    "typeParameter": "#ffe6c7",
+    "typeParameter": "#ffe1ba",
     "class": "#7dd7ff",
-    "interface": "#ffe6c7",
+    "interface": "#ffe1ba",
     "enum": "#7dd7ff",
     "enumMember": "#ff6a2c",
     "function": "#ff0055",
     "method": "#ff0055",
     "macro": "#ff4d00",
-    "parameter": "#ffe6c7",
+    "parameter": "#ffe1ba",
     "property": "#ffcc00",
-    "variable": "#f4e9df",
+    "variable": "#edae82",
     "decorator": "#ff4d00",
     "comment": {
       "foreground": "#7d6b5d",

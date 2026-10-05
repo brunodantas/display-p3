@@ -48,8 +48,12 @@ _Avoid_: white, grey
 A neutral light enough to glare, measured as OKLCH chroma below 0.008 with lightness above 0.6. This project bans them, except for the flavor's own background; dark neutrals are allowed.
 _Avoid_: white
 
+**Pale**:
+A light color with too little chroma to read as a hue, measured as OKLCH lightness above 0.6 and chroma below 0.06. Code text may not be pale, except comments and operators.
+_Avoid_: white, near-white
+
 **Tint**:
-The small chroma a light value takes from its background's hue. Each tint strength is a lightness and chroma, one for main text and one for bright white. The template sets them, and a flavor may change either number, or the hue when its background has no visible hue.
+The small chroma a light value takes from its background's hue. Each tint strength is a lightness and chroma, one for main text, one for code and one for bright white. The template sets them, and a flavor may change either number, or the hue when its background has no visible hue.
 _Avoid_: cast
 
 **Gamut edge**:

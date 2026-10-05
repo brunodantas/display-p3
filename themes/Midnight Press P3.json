@@ -10,7 +10,7 @@
     "icon.foreground": "#e7dccc",
 
     "editor.background": "#0f1112",
-    "editor.foreground": "#e7dccc",
+    "editor.foreground": "#dfb776",
     "editorLineNumber.foreground": "#3e4246",
     "editorLineNumber.activeForeground": "#d65d00",
     "editorCursor.foreground": "#d65d00",
@@ -225,7 +225,7 @@
         "entity.name.trait",
         "entity.name.impl"
       ],
-      "settings": { "foreground": "#d9cebe" }
+      "settings": { "foreground": "#f2c988" }
     },
     {
       "name": "Midnight Press: Functions / Methods (Cadmium Orange)",
@@ -265,7 +265,7 @@
     {
       "name": "Midnight Press: Variables",
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
-      "settings": { "foreground": "#e7dccc" }
+      "settings": { "foreground": "#dfb776" }
     },
     {
       "name": "Midnight Press: Parameters",
@@ -305,19 +305,19 @@
   ],
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "namespace": "#d9cebe",
-    "type": "#d9cebe",
+    "namespace": "#f2c988",
+    "type": "#f2c988",
     "typeParameter": "#d65d00",
-    "class": "#d9cebe",
-    "interface": "#d9cebe",
-    "enum": "#d9cebe",
+    "class": "#f2c988",
+    "interface": "#f2c988",
+    "enum": "#f2c988",
     "enumMember": "#3872ff",
     "function": "#d65d00",
     "method": "#d65d00",
     "macro": "#9e53f5",
     "parameter": "#d65d00",
     "property": "#168a89",
-    "variable": "#e7dccc",
+    "variable": "#dfb776",
     "decorator": "#9e53f5",
     "comment": {
       "foreground": "#6f7276",

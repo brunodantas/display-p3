@@ -2,6 +2,19 @@
 
 All notable changes to this extension are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the version follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Added
+
+- The check fails any flavor whose code text is pale, meaning OKLCH lightness above 0.6 with chroma below 0.06. Comments and operators may be pale.
+
+### Changed
+
+- Code text is colored in every dark flavor, where it used to carry almost no hue. It takes the background's hue at about four times the chroma of UI text. Dracula's goes from `#ecedfb` to `#b2b7fa`, and Monokai's from `#f9f9eb` to `#c5c279`. UI text and Artisan Paper don't change.
+  - Variables take the new code text color in Bioluminescent, Deep Earth, Midnight Press, Monokai, One Dark and Solar Flare.
+  - Midnight Press types, classes, enums, namespaces and interfaces go from `#d9cebe` to `#f2c988`.
+  - Solar Flare parameters, type parameters and interfaces go from `#ffe6c7` to `#ffe1ba`.
+
 ## 0.2.1 - 2026-10-04
 
 ### Changed

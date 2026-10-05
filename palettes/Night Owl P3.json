@@ -4,6 +4,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "overlay": { "tint": "text" },
     "chrome": [0.156, 0.041, 250.6],
     "background": [0.177, 0.05, 252.7],
@@ -29,6 +30,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "sky",
     "background": "background",

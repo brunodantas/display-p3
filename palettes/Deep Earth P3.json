@@ -5,6 +5,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "overlay": { "tint": "text" },
     "activityBar": [0.166, 0.003, 196.8],
     "chrome": [0.175, 0.003, 196.9],
@@ -35,6 +36,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "blue",
     "background": "background",
@@ -124,7 +126,7 @@
     "string": "greenSyntax",
     "decorator": "coralSyntax",
     "constant": "yellow",
-    "variable": "foreground",
+    "variable": "code",
     "parameter": "coralSyntax",
     "property": "blueSyntax",
     "operator": "muted",

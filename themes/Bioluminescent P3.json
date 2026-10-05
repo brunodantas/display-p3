@@ -10,7 +10,7 @@
     "icon.foreground": "#d8e2ff",
 
     "editor.background": "#0a101e",
-    "editor.foreground": "#d8e2ff",
+    "editor.foreground": "#a1bdfc",
     "editorLineNumber.foreground": "#2b3b57",
     "editorLineNumber.activeForeground": "#00ffd5",
     "editorCursor.foreground": "#ff007a",
@@ -265,7 +265,7 @@
     {
       "name": "Bioluminescent: Variables",
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
-      "settings": { "foreground": "#d8e2ff" }
+      "settings": { "foreground": "#a1bdfc" }
     },
     {
       "name": "Bioluminescent: Parameters",
@@ -317,7 +317,7 @@
     "macro": "#d400ff",
     "parameter": "#ff007a",
     "property": "#00ffd5",
-    "variable": "#d8e2ff",
+    "variable": "#a1bdfc",
     "decorator": "#d400ff",
     "comment": {
       "foreground": "#5c6b73",

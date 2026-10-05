@@ -10,14 +10,18 @@ const realTemplate = JSON.parse(fs.readFileSync(path.join(root, 'build/template.
 
 const template = {
   colors: [
-    { 'editor.background': 'background', 'editor.foreground': 'text' },
+    { 'editor.background': 'background', 'editor.foreground': 'code' },
     { 'badge.background': 'text', 'badge.foreground': 'background' },
   ],
   syntax: {
     comments: { scope: ['comment'], foreground: 'comment', fontStyle: 'italic' },
   },
   semanticTokenColors: { comment: { foreground: 'comment', italic: true } },
-  tint: { text: { lightness: 0.9, chroma: 0.025 }, brightWhite: { lightness: 0.975, chroma: 0.01 } },
+  tint: {
+    text: { lightness: 0.9, chroma: 0.025 },
+    code: { lightness: 0.8, chroma: 0.095 },
+    brightWhite: { lightness: 0.975, chroma: 0.01 },
+  },
 };
 
 // A pink that converts to #ff00aa inside sRGB.
@@ -28,8 +32,8 @@ const night = [0.243, 0.019, 280.4];
 const palette = (changes = {}) => ({
   name: 'Display P3 — Fixture',
   type: 'dark',
-  swatches: { black: [0, 0, 0], night, text: { tint: 'text' }, pink },
-  roles: { background: 'night', text: 'text', comment: 'pink' },
+  swatches: { black: [0, 0, 0], night, text: { tint: 'text' }, code: { tint: 'code' }, pink },
+  roles: { background: 'night', text: 'text', code: 'code', comment: 'pink' },
   overrides: {},
   syntax: [{ rule: 'comments', name: 'Fixture: Comments' }],
   ...changes,
@@ -68,33 +72,33 @@ test('every flavor is named Display P3 followed by its flavor name', () => {
 });
 
 test('a role bound with an alpha keeps the alpha byte after the converted color', () => {
-  const { theme, violations } = buildOne(palette({ roles: { background: 'night', text: 'pink/1f', comment: 'pink' } }));
+  const { theme, violations } = buildOne(palette({ roles: { background: 'night', text: 'text', code: 'pink/1f', comment: 'pink' } }));
   assert.deepEqual(violations.map((v) => v.key), ['editor.foreground']);
   assert.equal(theme.colors['editor.foreground'], '#ff00aa1f');
   assert.equal(theme.colors['editor.background'], '#1e1f29');
 });
 
 test('a per-key override replaces one key and leaves the rest of its role alone', () => {
-  const { theme, violations } = buildOne(palette({ overrides: { 'badge.background': 'pink/d4' } }));
+  const { theme, violations } = buildOne(palette({ overrides: { 'badge.foreground': 'pink/d4' } }));
   assert.deepEqual(violations, []);
-  assert.equal(theme.colors['badge.background'], '#ff00aad4');
-  assert.equal(theme.colors['editor.foreground'], '#daddef');
+  assert.equal(theme.colors['badge.foreground'], '#ff00aad4');
+  assert.equal(theme.colors['editor.background'], '#1e1f29');
 });
 
 test('syntax rules come out in palette order with template scopes, then extra rules', () => {
-  const extra = { name: 'Fixture: Tags', scope: ['entity.name.tag'], color: 'text/80' };
+  const extra = { name: 'Fixture: Tags', scope: ['entity.name.tag'], color: 'pink/80' };
   const { theme, violations } = buildOne(palette({ syntax: [{ rule: 'comments', name: 'Fixture: Comments' }, extra] }));
   assert.deepEqual(violations.map((v) => v.key), ['Fixture: Tags']);
   assert.deepEqual(theme.tokenColors, [
     { name: 'Fixture: Comments', scope: ['comment'], settings: { foreground: '#ff00aa', fontStyle: 'italic' } },
-    { name: 'Fixture: Tags', scope: ['entity.name.tag'], settings: { foreground: '#daddef80' } },
+    { name: 'Fixture: Tags', scope: ['entity.name.tag'], settings: { foreground: '#ff00aa80' } },
   ]);
   assert.deepEqual(theme.semanticTokenColors, { comment: { foreground: '#ff00aa', italic: true } });
 });
 
 test('unresolvable references are violations naming the flavor and key', () => {
   const { violations } = buildOne(palette({
-    roles: { background: 'night', text: 'grey', comment: 'pink' },
+    roles: { background: 'night', text: 'grey', code: 'grey', comment: 'pink' },
     overrides: { 'editor.nonsense': 'black', 'badge.foreground': 'pink/zz' },
     syntax: [{ rule: 'strings', name: 'Fixture: Strings' }],
   }));
@@ -136,32 +140,31 @@ test('a compiled flavor with no committed file is a violation', () => {
 
 test('a tint swatch takes the background hue at the default strength, or its own lightness', () => {
   const { theme, violations } = buildOne(palette({
-    swatches: { night, text: { tint: 'text' }, dim: { tint: 'text', lightness: 0.7 }, pink },
-    roles: { background: 'night', text: 'text', comment: 'dim' },
+    swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, dim: { tint: 'text', lightness: 0.7 }, pink },
+    roles: { background: 'night', text: 'text', code: 'code', comment: 'dim' },
   }));
   assert.deepEqual(violations, []);
-  assert.equal(theme.colors['editor.foreground'], '#daddef');
   assert.equal(theme.colors['badge.background'], '#daddef');
   assert.equal(theme.tokenColors[0].settings.foreground, '#9b9dae');
 });
 
 test('a flavor changes either tint number per strength, and the hue for every strength', () => {
-  const swatches = { night, text: { tint: 'text' }, bright: { tint: 'brightWhite' }, pink };
-  const roles = { background: 'night', text: 'text', comment: 'bright' };
+  const swatches = { night, text: { tint: 'text' }, code: { tint: 'code' }, bright: { tint: 'brightWhite' }, pink };
+  const roles = { background: 'night', text: 'text', code: 'code', comment: 'bright' };
   const lighter = buildOne(palette({ swatches, roles, tint: { text: { lightness: 0.95, chroma: 0.018 } } }));
   assert.deepEqual(lighter.violations, []);
-  assert.equal(lighter.theme.colors['editor.foreground'], '#ecedfb');
+  assert.equal(lighter.theme.colors['badge.background'], '#ecedfb');
   assert.equal(lighter.theme.tokenColors[0].settings.foreground, '#f5f6fe');
   const yellow = buildOne(palette({ swatches, roles, tint: { hue: 106.5, text: { lightness: 0.977 } } }));
   assert.deepEqual(yellow.violations, []);
-  assert.equal(yellow.theme.colors['editor.foreground'], '#f9f9e6');
+  assert.equal(yellow.theme.colors['badge.background'], '#f9f9e6');
   assert.equal(yellow.theme.tokenColors[0].settings.foreground, '#f7f7f0');
 });
 
 test('a tint with no background hue, or naming an unknown strength, is a violation', () => {
   const { violations } = buildOne(palette({
     swatches: { black: [0, 0, 0], text: { tint: 'text' }, odd: { tint: 'glow' }, pink },
-    roles: { background: 'black', text: 'text', comment: 'odd' },
+    roles: { background: 'black', text: 'text', code: 'text', comment: 'odd' },
     tint: { glow: { lightness: 0.5 } },
   }));
   assert.deepEqual(violations.map((v) => v.key).sort(), [
@@ -176,7 +179,7 @@ test('a tint with no background hue, or naming an unknown strength, is a violati
 test('a light neutral is a violation naming the flavor, key and measured values, opaque or alpha', () => {
   const { violations } = buildOne(palette({
     swatches: { night, white: [1, 0, 0], pink },
-    roles: { background: 'night', text: 'white', comment: 'white/08' },
+    roles: { background: 'night', text: 'white', code: 'white', comment: 'white/08' },
   }));
   assert.deepEqual(violations, [
     { flavor: 'Fixture P3', key: 'editor.foreground', message: 'light neutral #ffffff (L 1.000, C 0.0000)' },
@@ -191,17 +194,17 @@ test('a light neutral is a violation naming the flavor, key and measured values,
 test('a light value just under the chroma floor fails, and one just above it passes', () => {
   // Chroma 0.008 rounds to #f8f8f2, which measures C 0.0079.
   const lightValue = (c) => buildOne(palette({
-    swatches: { night, text: [0.977, c, 106.5], pink },
-    roles: { background: 'night', text: 'text', comment: 'pink' },
+    swatches: { night, text: [0.977, c, 106.5], code: { tint: 'code' }, pink },
+    roles: { background: 'night', text: 'text', code: 'code', comment: 'pink' },
   })).violations.map((v) => v.key);
-  assert.deepEqual(lightValue(0.008), ['editor.foreground', 'badge.background']);
+  assert.deepEqual(lightValue(0.008), ['badge.background']);
   assert.deepEqual(lightValue(0.0095), []);
 });
 
 test('dark neutrals and black shadows pass', () => {
   const { violations } = buildOne(palette({
-    swatches: { night, black: [0, 0, 0], grey: [0.6, 0, 0], text: { tint: 'text' } },
-    roles: { background: 'night', text: 'text', comment: 'grey' },
+    swatches: { night, black: [0, 0, 0], grey: [0.6, 0, 0], text: { tint: 'text' }, code: { tint: 'code' } },
+    roles: { background: 'night', text: 'text', code: 'code', comment: 'grey' },
     overrides: { 'badge.background': 'black/80' },
   }));
   assert.deepEqual(violations, []);
@@ -212,7 +215,7 @@ test('the background color itself is exempt, wherever it is used', () => {
   const { violations } = buildOne(palette({
     type: 'light',
     swatches: { paper: [0.986, 0.007, 80.7], ink: [0.272, 0.009, 67.4], pink },
-    roles: { background: 'paper', text: 'ink', comment: 'ink' },
+    roles: { background: 'paper', text: 'ink', code: 'ink', comment: 'ink' },
     overrides: { 'badge.background': 'paper/80', 'badge.foreground': 'paper' },
   }));
   assert.deepEqual(violations, []);
@@ -226,8 +229,8 @@ test('bright white must be the lightest of the 16 ANSI colors', () => {
   const withAnsi = { ...template, colors: [...template.colors, { ...ansiKeys, 'terminal.ansiWhite': 'text', 'terminal.ansiBrightWhite': 'brightWhite' }] };
   const ansi = (tint) => build(withAnsi, tempDir({
     'Fixture P3.json': palette({
-      swatches: { night, text: { tint: 'text' }, bright: { tint: 'brightWhite' }, pink },
-      roles: { background: 'night', text: 'text', comment: 'pink', ansiDim: 'pink', brightWhite: 'bright' },
+      swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, bright: { tint: 'brightWhite' }, pink },
+      roles: { background: 'night', text: 'text', code: 'code', comment: 'pink', ansiDim: 'pink', brightWhite: 'bright' },
       tint,
     }),
   })).violations.map((v) => v.key);
@@ -239,8 +242,8 @@ test('bright white must be the lightest of the 16 ANSI colors', () => {
 test('max chroma lands on the gamut edge, which at a primary\'s own lightness and hue is the primary', () => {
   // The OKLCH lightness and hue of sRGB red, green and blue, from Ottosson's reference conversion.
   const edge = (l, h) => buildOne(palette({
-    swatches: { night, text: { tint: 'text' }, pink, signal: [l, 'max', h] },
-    roles: { background: 'night', text: 'text', comment: 'pink' },
+    swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, pink, signal: [l, 'max', h] },
+    roles: { background: 'night', text: 'text', code: 'code', comment: 'pink' },
     overrides: { 'badge.background': 'signal' },
   }));
   for (const [[l, h], hex] of [
@@ -257,8 +260,8 @@ test('max chroma lands on the gamut edge, which at a primary\'s own lightness an
 test('a swatch outside sRGB without max is one violation naming the flavor, swatch and values', () => {
   // A cyan that needs a red channel of -0.03.
   const { violations } = buildOne(palette({
-    swatches: { night, text: { tint: 'text' }, cyan: [0.905, 0.155, 194.8] },
-    roles: { background: 'night', text: 'text', comment: 'cyan' },
+    swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, cyan: [0.905, 0.155, 194.8] },
+    roles: { background: 'night', text: 'text', code: 'code', comment: 'cyan' },
   }));
   assert.deepEqual(violations, [
     { flavor: 'Fixture P3', key: 'swatches.cyan', message: 'oklch(0.905 0.155 194.8) is outside sRGB, so lower its chroma or set it to "max"' },
@@ -268,6 +271,7 @@ test('a swatch outside sRGB without max is one violation naming the flavor, swat
 // Each pair of lightnesses passed to this is one 8-bit step apart, straddling a floor.
 const tinted = (lightness) => ({ tint: 'text', lightness });
 
+// The text tint near a floor is also pale, which is a separate rule with its own tests.
 const floorViolations = (swatches, roles, extraRules = []) => {
   const withFloors = {
     ...template,
@@ -277,20 +281,20 @@ const floorViolations = (swatches, roles, extraRules = []) => {
   };
   return buildOne(
     palette({
-      swatches: { night, text: { tint: 'text' }, pink, ...swatches },
-      roles: { background: 'night', text: 'text', comment: 'pink', keyword: 'pink', lineNumber: 'pink', ...roles },
+      swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, pink, ...swatches },
+      roles: { background: 'night', text: 'text', code: 'code', comment: 'pink', keyword: 'pink', lineNumber: 'pink', ...roles },
       syntax: [{ rule: 'comments', name: 'Fixture: Comments' }, { rule: 'keywords', name: 'Fixture: Keywords' }, ...extraRules],
     }),
     undefined,
     withFloors,
-  ).violations;
+  ).violations.filter((v) => !v.message.startsWith('pale'));
 };
 
 test('editor text under 7:1 against the editor background is a violation naming the measured ratio', () => {
-  assert.deepEqual(floorViolations({ text: tinted(0.737) }, {}), [
+  assert.deepEqual(floorViolations({ code: tinted(0.737) }, {}), [
     { flavor: 'Fixture P3', key: 'editor.foreground', message: '#a6a8ba has contrast 6.96:1 against #1e1f29, under the 7:1 floor' },
   ]);
-  assert.deepEqual(floorViolations({ text: tinted(0.7371) }, {}), []);
+  assert.deepEqual(floorViolations({ code: tinted(0.7371) }, {}), []);
 });
 
 test('syntax tokens, semantic ones included, need 4.5:1', () => {
@@ -322,7 +326,7 @@ test('a palette rule scoped to a kind of comment gets the comment floor, and oth
 });
 
 test('a color under a floor with an alpha channel fails, even when opaque alpha would pass', () => {
-  assert.deepEqual(floorViolations({}, { text: 'text/ff', keyword: 'pink/80' }), [
+  assert.deepEqual(floorViolations({}, { code: 'text/ff', keyword: 'pink/80' }), [
     { flavor: 'Fixture P3', key: 'editor.foreground', message: '#daddefff has an alpha channel, so it cannot be held to the 7:1 floor' },
     { flavor: 'Fixture P3', key: 'Fixture: Keywords', message: '#ff00aa80 has an alpha channel, so it cannot be held to the 4.5:1 floor' },
     { flavor: 'Fixture P3', key: 'semanticTokenColors.variable', message: '#ff00aa80 has an alpha channel, so it cannot be held to the 4.5:1 floor' },
@@ -332,4 +336,67 @@ test('a color under a floor with an alpha channel fails, even when opaque alpha 
 test('dim line numbers have no floor', () => {
   // #383948 measures 1.43:1, under every floor.
   assert.deepEqual(floorViolations({ lineNumber: tinted(0.35) }, { lineNumber: 'lineNumber' }), []);
+});
+
+const paleViolations = (swatches, roles, { colors = {}, syntax = [] } = {}) => {
+  const withCode = {
+    ...template,
+    colors: [...template.colors, colors],
+    syntax: { ...template.syntax, keywords: { scope: ['keyword'], foreground: 'keyword' }, operators: realTemplate.syntax.operators },
+    semanticTokenColors: { ...template.semanticTokenColors, variable: 'keyword' },
+  };
+  return buildOne(
+    palette({
+      swatches: { night, text: { tint: 'text' }, code: { tint: 'code' }, pink, ...swatches },
+      roles: { background: 'night', text: 'text', code: 'code', comment: 'pink', keyword: 'pink', ...roles },
+      syntax: [{ rule: 'comments', name: 'Fixture: Comments' }, { rule: 'keywords', name: 'Fixture: Keywords' }, ...syntax],
+    }),
+    undefined,
+    withCode,
+  ).violations.filter((v) => v.message.startsWith('pale'));
+};
+
+test('code text above lightness 0.6 is pale, naming the flavor, key and measured values', () => {
+  const pale = { flavor: 'Fixture P3', message: 'pale #7c7f92 (L 0.601, C 0.0290)' };
+  assert.deepEqual(paleViolations({ grey: [0.6, 0.03, 280.4] }, { code: 'grey', keyword: 'grey' }), [
+    { ...pale, key: 'editor.foreground' },
+    { ...pale, key: 'Fixture: Keywords' },
+    { ...pale, key: 'semanticTokenColors.variable' },
+  ]);
+  // #7c7e92 measures L 0.598.
+  assert.deepEqual(paleViolations({ grey: [0.5995, 0.03, 280.4] }, { code: 'grey', keyword: 'grey' }), []);
+});
+
+test('code text under chroma 0.06 is pale, and at 0.06 it is a color', () => {
+  assert.deepEqual(paleViolations({ lavender: [0.75, 0.059, 280.4] }, { keyword: 'lavender' }), [
+    { flavor: 'Fixture P3', key: 'Fixture: Keywords', message: 'pale #a6aad3 (L 0.749, C 0.0590)' },
+    { flavor: 'Fixture P3', key: 'semanticTokenColors.variable', message: 'pale #a6aad3 (L 0.749, C 0.0590)' },
+  ]);
+  // #a6aad4 measures C 0.0605.
+  assert.deepEqual(paleViolations({ lavender: [0.75, 0.06, 280.4] }, { keyword: 'lavender' }), []);
+});
+
+test('comments, operators, UI text and terminal bright white may be pale', () => {
+  const violations = paleViolations(
+    { lavender: [0.75, 0.03, 280.4], bright: { tint: 'brightWhite' } },
+    { text: 'lavender', comment: 'lavender', operator: 'lavender', brightWhite: 'bright' },
+    {
+      colors: { 'terminal.ansiBrightWhite': 'brightWhite' },
+      syntax: [{ rule: 'operators', name: 'Fixture: Operators' }],
+    },
+  );
+  assert.deepEqual(violations, []);
+});
+
+test('the template tints code at lightness 0.8 and chroma 0.095, which is not pale', () => {
+  const { theme, violations } = buildOne(palette(), undefined, { ...template, tint: realTemplate.tint });
+  assert.deepEqual(violations, []);
+  assert.equal(theme.colors['editor.foreground'], '#b2b7fa');
+});
+
+test('a rule with only some operator scopes, like keywords, may not be pale', () => {
+  const keywords = { name: 'Fixture: Keyword Operators', scope: ['keyword', 'keyword.operator.new'], color: 'lavender' };
+  assert.deepEqual(paleViolations({ lavender: [0.75, 0.03, 280.4] }, {}, { syntax: [keywords] }), [
+    { flavor: 'Fixture P3', key: 'Fixture: Keyword Operators', message: 'pale #aaacc1 (L 0.750, C 0.0301)' },
+  ]);
 });

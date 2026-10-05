@@ -4,6 +4,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "chrome": [0.188, 0.005, 67.5],
     "background": [0.211, 0.005, 67.6],
     "widget": [0.242, 0.007, 67.5],
@@ -32,6 +33,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "orange",
     "background": "background",

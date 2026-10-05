@@ -28,6 +28,7 @@
   },
   "roles": {
     "text": "ink",
+    "code": "ink",
     "chrome": "cream",
     "border": "border",
     "background": "paper",

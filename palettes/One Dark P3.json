@@ -4,6 +4,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "overlay": { "tint": "text" },
     "chrome": [0.233, 0.01, 248.2],
     "background": [0.25, 0.011, 254],
@@ -27,6 +28,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "sky",
     "background": "background",
@@ -116,7 +118,7 @@
     "string": "green",
     "decorator": "gold",
     "constant": "gold",
-    "variable": "chromeText",
+    "variable": "code",
     "parameter": "gold",
     "property": "sky",
     "operator": "muted",

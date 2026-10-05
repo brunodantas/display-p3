@@ -5,6 +5,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "chrome": [0.2, 0, 0],
     "background": [0.218, 0, 0],
     "widget": [0.244, 0, 0],
@@ -27,6 +28,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "lineNumber",
     "background": "background",
@@ -116,7 +118,7 @@
     "string": "lime",
     "decorator": "orange",
     "constant": "violet",
-    "variable": "foreground",
+    "variable": "code",
     "parameter": "orange",
     "property": "orange",
     "operator": "muted",

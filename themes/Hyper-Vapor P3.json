@@ -10,7 +10,7 @@
     "icon.foreground": "#f1e7ff",
 
     "editor.background": "#0f051a",
-    "editor.foreground": "#f1e7ff",
+    "editor.foreground": "#cbaff0",
     "editorLineNumber.foreground": "#3a1f52",
     "editorLineNumber.activeForeground": "#00d9ff",
     "editorCursor.foreground": "#00d9ff",

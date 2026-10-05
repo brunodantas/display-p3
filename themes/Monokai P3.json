@@ -10,7 +10,7 @@
     "icon.foreground": "#f9f9eb",
 
     "editor.background": "#1a1a1a",
-    "editor.foreground": "#f9f9eb",
+    "editor.foreground": "#c5c279",
     "editorLineNumber.foreground": "#4a4a4a",
     "editorLineNumber.activeForeground": "#a6ff00",
     "editorCursor.foreground": "#00e5ff",
@@ -261,7 +261,7 @@
     {
       "name": "Monokai: Variables",
       "scope": ["variable", "variable.other", "variable.other.readwrite"],
-      "settings": { "foreground": "#f9f9eb" }
+      "settings": { "foreground": "#c5c279" }
     },
     {
       "name": "Monokai: Parameters / Attributes (Safety Orange)",
@@ -319,7 +319,7 @@
     "macro": "#ff035f",
     "parameter": "#ff9500",
     "property": "#ff9500",
-    "variable": "#f9f9eb",
+    "variable": "#c5c279",
     "decorator": "#ff9500",
     "comment": {
       "foreground": "#75715e",

@@ -4,6 +4,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "overlay": { "tint": "text" },
     "chrome": [0.154, 0.023, 262.5],
     "background": [0.175, 0.031, 265.7],
@@ -30,6 +31,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "teal",
     "background": "background",
@@ -119,7 +121,7 @@
     "string": "teal",
     "decorator": "purple",
     "constant": "yellow",
-    "variable": "foreground",
+    "variable": "code",
     "parameter": "red",
     "property": "teal",
     "operator": "lightBlue",

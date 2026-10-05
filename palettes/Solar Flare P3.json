@@ -4,6 +4,7 @@
   "swatches": {
     "black": [0, 0, 0],
     "brightWhite": { "tint": "brightWhite" },
+    "code": { "tint": "code" },
     "chrome": [0.153, 0.006, 39.3],
     "background": [0.171, 0.007, 55.9],
     "widget": [0.184, 0.011, 39.3],
@@ -12,7 +13,7 @@
     "faint": [0.667, 0.042, 60.7],
     "muted": [0.763, 0.039, 62],
     "chromeText": [0.903, 0.027, 65.7],
-    "typeParameter": [0.937, 0.049, 73.1],
+    "typeParameter": [0.924, 0.06, 73.1],
     "foreground": [0.94, 0.018, 64.9],
     "brightRed": [0.682, 0.214, 9],
     "red": [0.6354, "max", 15.5],
@@ -25,6 +26,7 @@
   },
   "roles": {
     "text": "foreground",
+    "code": "code",
     "chrome": "chrome",
     "border": "coral",
     "background": "background",
@@ -114,7 +116,7 @@
     "string": "gold",
     "decorator": "coral",
     "constant": "lightCoral",
-    "variable": "foreground",
+    "variable": "code",
     "parameter": "typeParameter",
     "property": "gold",
     "operator": "muted",
