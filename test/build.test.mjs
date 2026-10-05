@@ -60,6 +60,13 @@ test('every committed flavor compiles from its palette byte for byte', () => {
   }
 });
 
+test('every flavor is named Display P3 followed by its flavor name', () => {
+  const { flavors } = build(realTemplate, path.join(root, 'palettes'));
+  for (const { file, json } of flavors) {
+    assert.equal(JSON.parse(json).name, `Display P3 — ${file.replace(/ P3\.json$/, '')}`, file);
+  }
+});
+
 test('a role bound with an alpha keeps the alpha byte after the converted color', () => {
   const { theme, violations } = buildOne(palette({ roles: { background: 'night', text: 'pink/1f', comment: 'pink' } }));
   assert.deepEqual(violations.map((v) => v.key), ['editor.foreground']);
