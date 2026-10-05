@@ -2,7 +2,7 @@
   "name": "display-p3",
   "displayName": "Display P3 Themes",
   "description": "Color themes tuned for bright wide-gamut screens: tinted whites, signal colors at the sRGB gamut edge.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "publisher": "brunodantas",
   "icon": "logo.png",
   "galleryBanner": {
