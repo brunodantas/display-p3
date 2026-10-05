@@ -55,6 +55,7 @@
     "check": "node build/cli.mjs --check",
     "test": "node --test \"test/**/*.test.mjs\"",
     "preview": "node build/preview.mjs",
+    "screenshots": "node build/screenshots.mjs",
     "vscode:prepublish": "npm run check"
   },
   "contributes": {
@@ -142,6 +143,8 @@
     ]
   },
   "devDependencies": {
-    "culori": "^4.0.2"
+    "culori": "^4.0.2",
+    "playwright": "^1.63.0",
+    "shiki": "^4.5.0"
   }
 }
