@@ -206,7 +206,7 @@
         "keyword.operator.expression",
         "keyword.operator.logical"
       ],
-      "settings": { "foreground": "#ff005f" }
+      "settings": { "foreground": "#ff035f" }
     },
     {
       "name": "Monokai: Types",
@@ -302,7 +302,7 @@
     {
       "name": "Monokai: Invalid",
       "scope": ["invalid", "invalid.illegal"],
-      "settings": { "foreground": "#ff005f", "fontStyle": "underline" }
+      "settings": { "foreground": "#ff035f", "fontStyle": "underline" }
     }
   ],
   "semanticHighlighting": true,
@@ -316,7 +316,7 @@
     "enumMember": "#ae81ff",
     "function": "#00e5ff",
     "method": "#00e5ff",
-    "macro": "#ff005f",
+    "macro": "#ff035f",
     "parameter": "#ff9500",
     "property": "#ff9500",
     "variable": "#f9f9eb",
