@@ -210,7 +210,7 @@
         "keyword.control.directive",
         "support.other.directive"
       ],
-      "settings": { "foreground": "#d64200" }
+      "settings": { "foreground": "#df4a12" }
     },
     {
       "name": "Deep Earth: Types / Classes (P3 Raw Sulfur)",
@@ -236,7 +236,7 @@
         "support.method",
         "variable.function"
       ],
-      "settings": { "foreground": "#1a5fb4" }
+      "settings": { "foreground": "#3b7ed6" }
     },
     {
       "name": "Deep Earth: Strings (P3 Malachite)",
@@ -247,7 +247,7 @@
         "string.template",
         "string.regexp"
       ],
-      "settings": { "foreground": "#008f5d" }
+      "settings": { "foreground": "#01905e" }
     },
     {
       "name": "Deep Earth: Constants / Numbers",
@@ -270,7 +270,7 @@
     {
       "name": "Deep Earth: Parameters",
       "scope": ["variable.parameter"],
-      "settings": { "foreground": "#d64200" }
+      "settings": { "foreground": "#df4a12" }
     },
     {
       "name": "Deep Earth: Properties / Fields",
@@ -281,7 +281,7 @@
         "meta.object-literal.key",
         "meta.object.member"
       ],
-      "settings": { "foreground": "#1a5fb4" }
+      "settings": { "foreground": "#3b7ed6" }
     },
     {
       "name": "Deep Earth: Operators",
@@ -307,18 +307,18 @@
   "semanticTokenColors": {
     "namespace": "#d4b800",
     "type": "#d4b800",
-    "typeParameter": "#d64200",
+    "typeParameter": "#df4a12",
     "class": "#d4b800",
     "interface": "#d4b800",
     "enum": "#d4b800",
     "enumMember": "#d4b800",
-    "function": "#1a5fb4",
-    "method": "#1a5fb4",
-    "macro": "#d64200",
-    "parameter": "#d64200",
-    "property": "#1a5fb4",
+    "function": "#3b7ed6",
+    "method": "#3b7ed6",
+    "macro": "#df4a12",
+    "parameter": "#df4a12",
+    "property": "#3b7ed6",
     "variable": "#d7d3cc",
-    "decorator": "#d64200",
+    "decorator": "#df4a12",
     "comment": {
       "foreground": "#7a7370",
       "italic": true
