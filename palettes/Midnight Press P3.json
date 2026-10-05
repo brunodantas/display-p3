@@ -16,16 +16,16 @@
     "chromeText": { "tint": "text", "lightness": 0.857 },
     "foreground": { "tint": "text" },
     "brightRed": [0.7368, 0.162, 17.3],
-    "red": [0.691, 0.199, 18.5],
-    "orange": [0.621, 0.172, 46.9],
+    "red": [0.691, "max", 18.5],
+    "orange": [0.621, "max", 46.9],
     "brightOrange": [0.684, 0.15, 52.3],
     "cyan": [0.549, 0.0937, 194.8],
     "brightCyan": [0.666, 0.1, 195],
     "brightCyan2": [0.757, 0.1006, 195.2],
-    "blue": [0.4849, 0.291, 264.121],
+    "blue": [0.4849, "max", 264.121],
     "brightBlue": [0.601, 0.2157, 268.6],
     "brightViolet": [0.641, 0.223, 298],
-    "purple": [0.436, 0.2311, 301.1]
+    "purple": [0.436, "max", 301.1]
   },
   "roles": {
     "text": "foreground",

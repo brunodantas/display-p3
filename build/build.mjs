@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { formatHex } from 'culori';
+import { converter, formatHex } from 'culori';
 import { formatTheme } from './format.mjs';
 import { lint } from './lint.mjs';
+
+const rgb = converter('rgb');
 
 /**
  * Compiles every palette in paletteDir through the template into theme JSON text.
@@ -30,7 +32,10 @@ function compile(template, palette, report) {
   const tint = tintFor(template, palette, report);
   // A light neutral like muted text keeps its own lightness, so a tint swatch may set one.
   const swatchLch = (value, key) => {
-    if (Array.isArray(value)) return value;
+    if (Array.isArray(value)) {
+      const [l, c, h] = value;
+      return [l, c === 'max' ? edgeChroma(l, h) : c, h];
+    }
     const strength = tint.strengths[value.tint];
     if (!strength) {
       report(key, `unknown tint strength "${value.tint}"`);
@@ -42,6 +47,8 @@ function compile(template, palette, report) {
     }
     return [value.lightness ?? strength.lightness, strength.chroma, tint.hue];
   };
+  // A swatch used on many keys reports leaving sRGB once.
+  const gamutChecked = new Set();
   const color = (ref, key) => {
     const { swatchName, alpha } = parseColorRef(ref);
     if (!Object.hasOwn(palette.swatches, swatchName ?? '')) {
@@ -51,6 +58,11 @@ function compile(template, palette, report) {
     const resolved = swatchLch(palette.swatches[swatchName], key);
     if (!resolved) return null;
     const [l, c, h] = resolved;
+    if (!gamutChecked.has(swatchName) && outsideSrgb(l, c, h)) {
+      const fix = Array.isArray(palette.swatches[swatchName]) ? 'lower its chroma or set it to "max"' : 'lower its tint strength';
+      report(`swatches.${swatchName}`, `oklch(${l} ${c} ${h}) is outside sRGB, so ${fix}`);
+    }
+    gamutChecked.add(swatchName);
     return formatHex({ mode: 'oklch', l, c, h }) + alpha;
   };
   const role = (name, key) => {
@@ -117,6 +129,34 @@ function tintFor(template, palette, report) {
   const background = palette.swatches[parseColorRef(palette.roles.background ?? '').swatchName];
   const backgroundHue = Array.isArray(background) && background[1] > 0 ? background[2] : undefined;
   return { strengths, hue: flavorHue ?? backgroundHue };
+}
+
+// A fortieth of an 8-bit step absorbs a palette's rounded lightness and hue at a primary, yet clipping it never shows in the hex.
+const srgbTolerance = 0.0001;
+
+function outsideSrgb(l, c, h) {
+  const channels = rgb({ mode: 'oklch', l, c, h });
+  return ['r', 'g', 'b'].some((k) => channels[k] < -srgbTolerance || channels[k] > 1 + srgbTolerance);
+}
+
+const edgeChromas = new Map();
+
+// Near blue a constant hue leaves sRGB and comes back as chroma grows, so bisection alone stops early.
+// The scan step is finer than the in-gamut sliver at blue's cusp.
+function edgeChroma(l, h) {
+  const memoKey = `${l} ${h}`;
+  if (edgeChromas.has(memoKey)) return edgeChromas.get(memoKey);
+  const step = 0.00002;
+  let inside = 0.4; // Above magenta, the most chromatic sRGB color at 0.32.
+  while (inside > 0 && outsideSrgb(l, inside, h)) inside -= step;
+  let outside = inside + step;
+  for (let i = 0; i < 20; i++) {
+    const c = (inside + outside) / 2;
+    if (outsideSrgb(l, c, h)) outside = c;
+    else inside = c;
+  }
+  edgeChromas.set(memoKey, inside);
+  return inside;
 }
 
 const settings = (foreground, fontStyle) => ({ foreground, ...(fontStyle && { fontStyle }) });

@@ -20,8 +20,8 @@ const template = {
   tint: { text: { lightness: 0.9, chroma: 0.025 }, brightWhite: { lightness: 0.975, chroma: 0.01 } },
 };
 
-// Dracula's pink, which converts to #ff00aa.
-const pink = [0.66, 0.276, 349.7];
+// A pink that converts to #ff00aa inside sRGB.
+const pink = [0.6597, 0.2755, 349.6];
 // Dracula's background, which converts to #1e1f29 at hue 280.4.
 const night = [0.243, 0.019, 280.4];
 
@@ -225,4 +225,32 @@ test('bright white must be the lightest of the 16 ANSI colors', () => {
   assert.deepEqual(ansi(undefined), []);
   assert.deepEqual(ansi({ brightWhite: { lightness: 0.9, chroma: 0.025 } }), ['terminal.ansiBrightWhite']);
   assert.deepEqual(ansi({ brightWhite: { lightness: 0.85 } }), ['terminal.ansiBrightWhite']);
+});
+
+test('max chroma lands on the gamut edge, which at a primary\'s own lightness and hue is the primary', () => {
+  // The OKLCH lightness and hue of sRGB red, green and blue, from Ottosson's reference conversion.
+  const edge = (l, h) => buildOne(palette({
+    swatches: { night, text: { tint: 'text' }, signal: [l, 'max', h] },
+    roles: { background: 'night', text: 'text', comment: 'signal' },
+  }));
+  for (const [[l, h], hex] of [
+    [[0.627955, 29.2339], '#ff0000'],
+    [[0.86644, 142.4953], '#00ff00'],
+    [[0.452014, 264.052], '#0000ff'],
+  ]) {
+    const { theme, violations } = edge(l, h);
+    assert.deepEqual(violations, []);
+    assert.equal(theme.tokenColors[0].settings.foreground, hex);
+  }
+});
+
+test('a swatch outside sRGB without max is one violation naming the flavor, swatch and values', () => {
+  // A cyan that needs a red channel of -0.03.
+  const { violations } = buildOne(palette({
+    swatches: { night, text: { tint: 'text' }, cyan: [0.905, 0.155, 194.8] },
+    roles: { background: 'night', text: 'text', comment: 'cyan' },
+  }));
+  assert.deepEqual(violations, [
+    { flavor: 'Fixture P3', key: 'swatches.cyan', message: 'oklch(0.905 0.155 194.8) is outside sRGB, so lower its chroma or set it to "max"' },
+  ]);
 });

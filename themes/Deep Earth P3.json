@@ -2,7 +2,7 @@
   "name": "Display P3 — Deep Earth",
   "type": "dark",
   "colors": {
-    "focusBorder": "#1a5fb4",
+    "focusBorder": "#005dbf",
     "foreground": "#d7d3cc",
     "widget.shadow": "#00000080",
     "selection.background": "#1a5fb433",
@@ -40,7 +40,7 @@
     "activityBar.foreground": "#d64200",
     "activityBar.inactiveForeground": "#8a8380",
     "activityBar.activeBorder": "#d4b800",
-    "activityBarBadge.background": "#1a5fb4",
+    "activityBarBadge.background": "#005dbf",
     "activityBarBadge.foreground": "#121414",
 
     "sideBar.background": "#0f1111",
@@ -79,7 +79,7 @@
     "list.hoverForeground": "#d7d3cc",
     "list.highlightForeground": "#d4b800",
     "list.focusBackground": "#1a5fb41a",
-    "list.focusOutline": "#1a5fb4",
+    "list.focusOutline": "#005dbf",
 
     "button.background": "#1a5fb4",
     "button.foreground": "#121414",
@@ -140,7 +140,7 @@
     "scrollbarSlider.hoverBackground": "#1a5fb43d",
     "scrollbarSlider.activeBackground": "#1a5fb452",
 
-    "badge.background": "#1a5fb4",
+    "badge.background": "#005dbf",
     "badge.foreground": "#121414",
 
     "progressBar.background": "#d4b800",

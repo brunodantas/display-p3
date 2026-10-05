@@ -17,7 +17,7 @@ A flavor's swatches and the roles they fill.
 _Avoid_: color scheme
 
 **Swatch**:
-One named OKLCH color in a palette, either given as numbers or taken from the flavor's tint. Roles and overrides refer to it by name, with an optional alpha byte, as in `pink/1f`.
+One named OKLCH color in a palette, either given as numbers or taken from the flavor's tint. A numeric swatch may give its chroma as `max` to sit on the gamut edge, and any other swatch the flavor uses outside sRGB fails the build. Roles and overrides refer to it by name, with an optional alpha byte, as in `pink/1f`.
 _Avoid_: base color
 
 **Role**:
