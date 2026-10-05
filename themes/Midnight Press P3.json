@@ -210,7 +210,7 @@
         "keyword.control.directive",
         "support.other.directive"
       ],
-      "settings": { "foreground": "#6b00b8" }
+      "settings": { "foreground": "#9e53f5" }
     },
     {
       "name": "Midnight Press: Types / Classes",
@@ -247,7 +247,7 @@
         "string.template",
         "string.regexp"
       ],
-      "settings": { "foreground": "#008282" }
+      "settings": { "foreground": "#168a89" }
     },
     {
       "name": "Midnight Press: Numbers / Constants (Ultramarine)",
@@ -260,7 +260,7 @@
         "constant.other",
         "support.constant"
       ],
-      "settings": { "foreground": "#0033ff" }
+      "settings": { "foreground": "#3872ff" }
     },
     {
       "name": "Midnight Press: Variables",
@@ -281,7 +281,7 @@
         "meta.object-literal.key",
         "meta.object.member"
       ],
-      "settings": { "foreground": "#008282" }
+      "settings": { "foreground": "#168a89" }
     },
     {
       "name": "Midnight Press: Operators",
@@ -311,14 +311,14 @@
     "class": "#d9cebe",
     "interface": "#d9cebe",
     "enum": "#d9cebe",
-    "enumMember": "#0033ff",
+    "enumMember": "#3872ff",
     "function": "#d65d00",
     "method": "#d65d00",
-    "macro": "#6b00b8",
+    "macro": "#9e53f5",
     "parameter": "#d65d00",
-    "property": "#008282",
+    "property": "#168a89",
     "variable": "#e7dccc",
-    "decorator": "#6b00b8",
+    "decorator": "#9e53f5",
     "comment": {
       "foreground": "#6f7276",
       "italic": true
