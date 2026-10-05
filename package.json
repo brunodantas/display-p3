@@ -1,10 +1,14 @@
 {
   "name": "display-p3",
-  "displayName": "Display P3",
-  "description": "Display P3-friendly theme with multiple flavors.",
-  "version": "0.1.1",
+  "displayName": "Display P3 Themes",
+  "description": "Color themes tuned for bright wide-gamut screens: tinted whites, signal colors at the sRGB gamut edge.",
+  "version": "0.2.0",
   "publisher": "brunodantas",
   "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#0a0e14",
+    "theme": "dark"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -25,8 +29,13 @@
     "p3",
     "wide gamut",
     "wide color",
-    "color accurate",
-    "high contrast",
+    "dracula",
+    "monokai",
+    "solarized",
+    "tokyo night",
+    "night owl",
+    "one dark",
+    "synthwave",
     "mac",
     "macos",
     "apple",

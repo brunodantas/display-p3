@@ -1,12 +1,30 @@
-# Display P3
+# Display P3 Themes
 
-A [Display P3](https://en.wikipedia.org/wiki/DCI-P3)-friendly theme for VS Code, shipped as multiple **flavors**.
+<!-- Placeholder: a grid of all 16 flavors goes here, made by hand from the new screenshots. -->
 
-It is aimed at reproducing vibrant colors that only P3-compatible monitors are able to reproduce, such as Apple displays.
+Sixteen VS Code color themes, called flavors, tuned for bright wide-gamut screens such as Apple's Studio Display. Fifteen are dark and one is light. Dracula, Monokai, Solarized, Tokyo Night, Night Owl, One Dark and Synthwave are ports of the themes they're named after.
+
+VS Code can't show colors beyond sRGB. Its themes accept only sRGB hex, and the editor converts them as sRGB on a [Display P3](https://en.wikipedia.org/wiki/DCI-P3) panel too. So "P3" here names the screens the flavors are built for, not the colors they use. Every flavor follows three rules:
+
+- No white or light grey without a hue. Editor text, terminal bright white and the line-highlight overlay take a slight tint from the flavor's background, so they don't glare at full brightness.
+- The cursor, focus ring, errors, warnings and badges sit at the sRGB gamut edge, the most saturated color sRGB allows at their hue and lightness.
+- Editor text meets a 7:1 contrast ratio against the background, syntax colors 4.5:1 and comments 3:1, measured as WCAG 2.
+
+[ADR 0001](docs/adr/0001-palettes-are-oklch-sources.md) records why, and the two routes to native P3 color that didn't work.
 
 ## Installation
 
 Install via https://marketplace.visualstudio.com/items?itemName=brunodantas.display-p3
+
+## Changing a flavor
+
+Each flavor is an OKLCH palette in `palettes/`. The build compiles it through one shared template, `build/template.json`, into the theme JSON in `themes/` that VS Code reads. Never edit `themes/` by hand, because the check fails on any file that differs from the build.
+
+1. Edit the flavor's palette. A numeric swatch is `[lightness, chroma, hue]` in OKLCH, and a chroma of `"max"` puts it on the gamut edge. A swatch like `{ "tint": "text" }` takes the flavor's tint instead.
+2. Run `npm run build` to write the theme files.
+3. Run `npm run check`. It fails when a flavor breaks a color rule, for example with a light neutral, a color under its contrast floor or a swatch outside sRGB without `"max"`. It also fails when a theme file differs from the build. Each failure names the flavor and key.
+
+`npm run preview` writes `preview/index.html`, which puts each flavor's colors on `main` next to your build so you can judge a change by eye. `npm test` runs the build's tests, and [CONTEXT.md](CONTEXT.md) defines the terms.
 
 ## Dark Flavors
 
