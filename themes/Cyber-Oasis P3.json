@@ -232,7 +232,7 @@
         "support.method",
         "variable.function"
       ],
-      "settings": { "foreground": "#bd00ff" }
+      "settings": { "foreground": "#be1aff" }
     },
     {
       "name": "Cyber-Oasis: Strings (Deep Sea Blue)",
@@ -319,8 +319,8 @@
     "interface": "#7dffec",
     "enum": "#00e5ff",
     "enumMember": "#ff5f5f",
-    "function": "#bd00ff",
-    "method": "#bd00ff",
+    "function": "#be1aff",
+    "method": "#be1aff",
     "macro": "#00ffa3",
     "parameter": "#b7ffe9",
     "property": "#33c4ff",

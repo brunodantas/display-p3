@@ -26,6 +26,7 @@
     "sky": [0.7718, 0.143, 231.08],
     "brightBlue": [0.66, 0.184, 254.75],
     "blue": [0.5967, 0.221, 258.03],
+    "purpleSyntax": [0.6142, "max", 312.4],
     "purple": [0.60656, 0.3029, 312.4],
     "brightPurple": [0.671, 0.261, 315.6]
   },
@@ -116,7 +117,7 @@
     "comment": "comment",
     "keyword": "green",
     "type": "cyan",
-    "function": "purple",
+    "function": "purpleSyntax",
     "string": "blue",
     "decorator": "green",
     "constant": "coral",
