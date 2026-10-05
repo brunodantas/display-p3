@@ -55,3 +55,7 @@ _Avoid_: cast
 **Gamut edge**:
 The highest chroma sRGB allows at a given hue and lightness.
 _Avoid_: max saturation
+
+**Contrast floor**:
+The lowest WCAG 2 contrast ratio a color may have against the editor background: 7:1 for editor text, 4.5:1 for syntax tokens and 3:1 for comments. A color with an alpha channel cannot meet one. Line numbers have no floor.
+_Avoid_: minimum contrast
