@@ -193,7 +193,7 @@
     {
       "name": "Artisan Paper: Comments (Dust Rose)",
       "scope": ["comment", "punctuation.definition.comment"],
-      "settings": { "foreground": "#a68e8e", "fontStyle": "italic" }
+      "settings": { "foreground": "#a48c8c", "fontStyle": "italic" }
     },
     {
       "name": "Artisan Paper: Keywords (Deep Ochre)",
@@ -206,7 +206,7 @@
         "keyword.operator.expression",
         "keyword.operator.logical"
       ],
-      "settings": { "foreground": "#b86b00" }
+      "settings": { "foreground": "#aa6200" }
     },
     {
       "name": "Artisan Paper: Types",
@@ -256,7 +256,7 @@
         "constant.other",
         "support.constant"
       ],
-      "settings": { "foreground": "#b86b00" }
+      "settings": { "foreground": "#aa6200" }
     },
     {
       "name": "Artisan Paper: Variables",
@@ -266,7 +266,7 @@
     {
       "name": "Artisan Paper: Parameters",
       "scope": ["variable.parameter"],
-      "settings": { "foreground": "#b86b00" }
+      "settings": { "foreground": "#aa6200" }
     },
     {
       "name": "Artisan Paper: Properties / Fields",
@@ -301,7 +301,7 @@
         "entity.name.function.decorator",
         "meta.decorator"
       ],
-      "settings": { "foreground": "#b86b00" }
+      "settings": { "foreground": "#aa6200" }
     },
     {
       "name": "Artisan Paper: Invalid",
@@ -313,20 +313,20 @@
   "semanticTokenColors": {
     "namespace": "#3a00cc",
     "type": "#3a00cc",
-    "typeParameter": "#b86b00",
+    "typeParameter": "#aa6200",
     "class": "#3a00cc",
     "interface": "#3a00cc",
     "enum": "#3a00cc",
-    "enumMember": "#b86b00",
+    "enumMember": "#aa6200",
     "function": "#3a00cc",
     "method": "#3a00cc",
-    "macro": "#b86b00",
-    "parameter": "#b86b00",
+    "macro": "#aa6200",
+    "parameter": "#aa6200",
     "property": "#3a00cc",
     "variable": "#2a2622",
-    "decorator": "#b86b00",
+    "decorator": "#aa6200",
     "comment": {
-      "foreground": "#a68e8e",
+      "foreground": "#a48c8c",
       "italic": true
     }
   }
