@@ -1,12 +1,12 @@
 # Display P3 Themes
 
-![All 16 Display P3 flavors](images/grid.png)
-
 Sixteen VS Code color themes, called flavors, tuned for bright wide-gamut screens such as Apple's Studio Display. Fifteen are dark and one is light. Dracula, Monokai, Solarized, Tokyo Night, Night Owl, One Dark and Synthwave are ports of the themes they're named after.
+
+![All 16 Display P3 flavors](images/grid.png)
 
 VS Code can't show colors beyond sRGB. Its themes accept only sRGB hex, and the editor converts them as sRGB on a [Display P3](https://en.wikipedia.org/wiki/DCI-P3) panel too. So "P3" here names the screens the flavors are built for, not the colors they use. Every flavor follows three rules:
 
-- No white or light grey without a hue. Editor text, terminal bright white and the line-highlight overlay take a slight tint from the flavor's background, so they don't glare at full brightness.
+- No white or light grey without a hue. Code text carries the flavor's background hue as a clear color. Terminal bright white and the line-highlight overlay take a slight tint of it, so they don't glare at full brightness.
 - The cursor, focus ring, errors, warnings and badges sit at the sRGB gamut edge, the most saturated color sRGB allows at their hue and lightness.
 - Editor text meets a 7:1 contrast ratio against the background, syntax colors 4.5:1 and comments 3:1, measured as WCAG 2.
 

@@ -14,6 +14,7 @@ All notable changes to this extension are documented in this file. The format fo
   - Variables take the new code text color in Bioluminescent, Deep Earth, Midnight Press, Monokai, One Dark and Solar Flare.
   - Midnight Press types, classes, enums, namespaces and interfaces go from `#d9cebe` to `#f2c988`.
   - Solar Flare parameters, type parameters and interfaces go from `#ffe6c7` to `#ffe1ba`.
+- The README screenshots show the new code colors, and the grid of all 16 flavors follows the opening paragraph.
 
 ## 0.2.1 - 2026-10-04
 
