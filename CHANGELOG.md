@@ -2,6 +2,12 @@
 
 All notable changes to this extension are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the version follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.1 - 2026-10-04
+
+### Changed
+
+- The README shows a new screenshot of every flavor and a grid of all 16 at the top. A script draws them from the theme files, so they show 0.2.0's colors. No flavor's colors change.
+
 ## 0.2.0 - 2026-10-04
 
 Every flavor now compiles from an OKLCH palette, and a check fails any flavor that breaks the color rules below. Most flavors look the same at a glance. Midnight Press changes the most, with warm text, types and punctuation and light violet keywords. Deep Earth's functions turn a lighter blue.
